@@ -5,6 +5,7 @@
  */
 package com.mycompany.ui;
 
+import com.mycompany.pc.StatusBar;
 import com.mycompany.pc.consol;
 
 /**
@@ -13,6 +14,7 @@ import com.mycompany.pc.consol;
  */
 public class process extends javax.swing.JFrame {
 consol mainPanel;
+StatusBar sb;
     /**
      * Creates new form process
      */
@@ -20,6 +22,8 @@ consol mainPanel;
         initComponents();
         mainPanel=new consol();
         jPanel1.add(mainPanel);
+        sb = new StatusBar();
+        jPanel2.add(sb);
     }
 
     /**
@@ -32,6 +36,7 @@ consol mainPanel;
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
@@ -39,6 +44,8 @@ consol mainPanel;
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setLayout(new java.awt.BorderLayout());
+
+        jPanel2.setLayout(new java.awt.BorderLayout());
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -53,10 +60,14 @@ consol mainPanel;
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 391, Short.MAX_VALUE)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 231, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -103,5 +114,6 @@ consol mainPanel;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     // End of variables declaration//GEN-END:variables
 }
